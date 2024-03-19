@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
       - run: mvn clean package
-      - run: mkdir staging && mv target/andriod-os-1.0-SNAPSHOT.jar target/andriod-os-${{ github.event.inputs.version }}.jar && cp target/*.jar staging && cp target/surefire-reports/TEST-*.xml staging
+      - run: mkdir staging && mv target/android-os-1.0-SNAPSHOT.jar target/android-os-${{ github.event.inputs.version }}.jar && cp target/*.jar staging && cp target/surefire-reports/TEST-*.xml staging
       - uses: actions/upload-artifact@v3
         with:
           name: Package
